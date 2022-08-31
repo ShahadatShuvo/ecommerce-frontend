@@ -2,8 +2,21 @@ import { Button } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import Badge, { BadgeProps } from "@mui/material/Badge";
+import { styled } from "@mui/material/styles";
+import IconButton from "@mui/material/IconButton";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
-function Navbar() {
+const StyledBadge = styled(Badge)<BadgeProps>(({ theme }) => ({
+  "& .MuiBadge-badge": {
+    right: -3,
+    top: 13,
+    border: `2px solid ${theme.palette.background.paper}`,
+    padding: "0 4px",
+  },
+}));
+
+function Navbar({ cart }: any) {
   return (
     <div className="bg-gray-100">
       <header className="text-gray-600 body-font">
@@ -16,7 +29,7 @@ function Navbar() {
               <a className="mr-5 hover:text-gray-900">About</a>
             </Link>
             <Link href="/products">
-              <a className="mr-5 hover:text-gray-900">Products</a>
+              <a className="mr-5 hover:text-gray-900">Shop</a>
             </Link>
             <Link href="/contact">
               <a className="hover:text-gray-900">Contact</a>
@@ -29,9 +42,20 @@ function Navbar() {
               width={30}
               height={30}
             />
-            <span className="ml-3 text-xl">MyShop</span>
+            <Link href="/products">
+              <span className="ml-3 text-xl cursor-pointer">MyShop</span>
+            </Link>
           </a>
-          <div className="lg:w-2/5 inline-flex lg:justify-end pt-5 md:pt-0 lg:ml-0">
+          <div className="lg:w-2/5 flex lg:justify-end items-center pt-5 md:pt-0 lg:ml-0 ">
+            <div className="mr-5">
+              <Link href="/cart">
+                <IconButton aria-label="cart">
+                  <StyledBadge badgeContent={cart?.length} color="secondary">
+                    <ShoppingCartIcon />
+                  </StyledBadge>
+                </IconButton>
+              </Link>
+            </div>
             <Button
               size="small"
               color="info"

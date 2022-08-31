@@ -5,11 +5,6 @@ import React from "react";
 import { ProductProps } from "../interfaces";
 
 function Products({ products }: ProductProps | any) {
-  console.log("products:", products);
-  console.log(
-    "img:",
-    products.data[0]?.attributes?.image?.data?.attributes?.url
-  );
   return (
     <div>
       <section className="text-gray-600 body-font">
@@ -37,25 +32,22 @@ function Products({ products }: ProductProps | any) {
                     <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
                       {product?.attributes?.category}
                     </h3>
-                    <h2 className="text-gray-900 title-font text-lg font-medium">
+                    <h2 className="text-gray-900 title-font text-lg font-medium capitalize">
                       {product?.attributes?.title}
                     </h2>
                     <div className="w-full flex justify-between items-center">
                       <div className="flex">
                         <p className="mt-1">
-                          ${product?.attributes?.discountedprice}
+                          ৳{product?.attributes?.discountedprice}
                         </p>
                         <p className="mt-1 ml-3 text-red-600 line-through">
-                          ${product?.attributes?.price}
+                          ৳{product?.attributes?.price}
                         </p>
                       </div>
                       <div>
-                        <Link
-                          href="/product[slug]"
-                          as={`/product/${product?.attributes?.slug}`}
-                        >
+                        <Link href={`/products/${product?.attributes?.slug}`}>
                           <Button size="small" variant="text">
-                            Buy Now
+                            Details
                           </Button>
                         </Link>
                       </div>

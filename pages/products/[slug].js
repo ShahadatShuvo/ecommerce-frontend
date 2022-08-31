@@ -1,7 +1,12 @@
+import { Button, TextField } from "@mui/material";
 import React from "react";
+import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+import ShoppingCartCheckoutIcon from "@mui/icons-material/ShoppingCartCheckout";
+import Link from "next/link";
 
-function ProductDetail({ product }) {
-  console.log("Singleproduct:", product);
+function ProductDetail({ product, addToCart }) {
+  const [quantity, setQuantity] = React.useState(1);
+
   const productItem = product?.data[0]?.attributes;
   return (
     <div>
@@ -19,16 +24,16 @@ function ProductDetail({ product }) {
               <h2 className="text-sm title-font text-gray-500 tracking-widest">
                 BRAND NAME
               </h2>
-              <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">
+              <h1 className="text-gray-900 text-3xl title-font font-medium mb-1 capitalize">
                 {productItem?.title}
               </h1>
               <div className="flex">
-                <p className="mt-1">${productItem?.discountedprice}</p>
+                <p className="mt-1">৳{productItem?.discountedprice}</p>
                 <p className="mt-1 ml-3 text-red-600 line-through">
-                  ${productItem?.price}
+                  ৳{productItem?.price}
                 </p>
               </div>
-              <div className="flex mb-4">
+              {/* <div className="flex mb-4">
                 <span className="flex items-center">
                   <svg
                     fill="currentColor"
@@ -125,14 +130,21 @@ function ProductDetail({ product }) {
                     </svg>
                   </a>
                 </span>
-              </div>
-              <p className="leading-relaxed">{productItem?.description}</p>
-              <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5">
+              </div> */}
+              <p className="leading-relaxed mt-3">{productItem?.description}</p>
+              <div className="flex flex-col md:flex-row gap-5 md:gap-0 justify-between  mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5">
                 <div className="flex">
                   <span className="mr-3">Color</span>
-                  <button className="border-2 border-gray-300 rounded-full w-6 h-6 focus:outline-none"></button>
-                  <button className="border-2 border-gray-300 ml-1 bg-gray-700 rounded-full w-6 h-6 focus:outline-none"></button>
-                  <button className="border-2 border-gray-300 ml-1 bg-indigo-500 rounded-full w-6 h-6 focus:outline-none"></button>
+                  <p className="hidden bg-white-500 bg-blue-500 bg-gray-500 bg-green-500"></p>
+                  <button
+                    className={`border-2 border-gray-300 rounded-full w-6 h-6 focus:outline-none ${
+                      productItem?.color === "black"
+                        ? "bg-black"
+                        : `bg-${productItem?.color}-500`
+                    }`}
+                  ></button>
+                  {/* <button className="border-2 border-gray-300 ml-1 bg-gray-700 rounded-full w-6 h-6 focus:outline-none"></button>
+                  <button className="border-2 border-gray-300 ml-1 bg-indigo-500 rounded-full w-6 h-6 focus:outline-none"></button> */}
                 </div>
                 <div className="flex ml-6 items-center">
                   <span className="mr-3">Size</span>
@@ -158,26 +170,48 @@ function ProductDetail({ product }) {
                     </span>
                   </div>
                 </div>
+                <div className="w-[50%] md:w-[30%] ">
+                  <TextField
+                    fullWidth
+                    size="small"
+                    id="outlined-basic"
+                    label="Quantity"
+                    type={"number"}
+                    variant="outlined"
+                    value={quantity}
+                    onChange={(e) => setQuantity(Number(e.target.value))}
+                    InputProps={{
+                      inputProps: { min: 1, max: 100 },
+                    }}
+                  />
+                </div>
               </div>
-              <div className="flex">
+              <div className="flex justify-between items-center">
                 <span className="title-font font-medium text-2xl text-gray-900">
-                  $58.00
+                  ৳{productItem?.discountedprice}
                 </span>
-                <button className="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">
-                  Button
-                </button>
-                <button className="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
-                  <svg
-                    fill="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    className="w-5 h-5"
-                    viewBox="0 0 24 24"
+                <div className="flex flex-col md:flex-row gap-2">
+                  <Button
+                    size="small"
+                    color="success"
+                    variant="outlined"
+                    startIcon={<AddShoppingCartIcon />}
+                    onClick={() => addToCart(productItem, quantity)}
                   >
-                    <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"></path>
-                  </svg>
-                </button>
+                    Add to cart
+                  </Button>
+                  <Link href="/checkout">
+                    <Button
+                      size="small"
+                      color="info"
+                      variant="outlined"
+                      sx={{ ml: 2 }}
+                      startIcon={<ShoppingCartCheckoutIcon />}
+                    >
+                      Checkout
+                    </Button>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
