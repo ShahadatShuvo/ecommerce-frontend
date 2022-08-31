@@ -29,8 +29,8 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <div>
-      <Navbar key={reloadkey} cart={cart} />
       <div className="container mx-auto px-4">
+        <Navbar key={reloadkey} cart={cart} />
         <Component
           addToCart={addToCart}
           removeFromCart={removeFromCart}

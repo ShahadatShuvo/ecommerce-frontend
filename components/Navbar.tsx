@@ -18,61 +18,58 @@ const StyledBadge = styled(Badge)<BadgeProps>(({ theme }) => ({
 
 function Navbar({ cart }: any) {
   return (
-    <div className="bg-gray-100">
-      <header className="text-gray-600 body-font">
-        <div className="container mx-auto flex flex-wrap p-4 flex-col md:flex-row items-center">
-          <nav className="flex lg:w-2/5 flex-wrap items-center text-base md:ml-auto">
-            <Link href="/">
-              <a className="mr-5 hover:text-gray-900">Home</a>
-            </Link>
-            <Link href="/about">
-              <a className="mr-5 hover:text-gray-900">About</a>
-            </Link>
-            <Link href="/products">
-              <a className="mr-5 hover:text-gray-900">Shop</a>
-            </Link>
-            <Link href="/contact">
-              <a className="hover:text-gray-900">Contact</a>
-            </Link>
-          </nav>
-          <Link href="/products">
-            <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
-              <Image
-                src="/shopping-cart-svgrepo-com.svg"
-                alt="Picture of the author"
-                width={30}
-                height={30}
-              />
-
-              <span className="ml-3 text-xl cursor-pointer">MyShop</span>
-            </a>
-          </Link>
-          <div className="lg:w-2/5 flex lg:justify-end items-center pt-5 md:pt-0 lg:ml-0 ">
-            <div className="mr-5">
-              <Link href="/cart">
-                <IconButton aria-label="cart">
-                  <StyledBadge badgeContent={cart?.length} color="secondary">
-                    <ShoppingCartIcon />
-                  </StyledBadge>
-                </IconButton>
-              </Link>
-            </div>
-            <Button
-              size="small"
-              color="info"
-              variant="contained"
-              sx={{
-                color: "black",
-                "&:hover": {
-                  color: "white",
-                },
-              }}
-            >
-              Log in
-            </Button>
+    <div className="w-full py-3 my-4 rounded-lg px-8 mx-auto bg-gray-100 flex justify-between text-gray-600">
+      <div className="w-1/3 flex items-center">
+        <Link href="/">
+          <a className="mr-5 hover:text-gray-900">Home</a>
+        </Link>
+        <Link href="/about">
+          <a className="mr-5 hover:text-gray-900">About</a>
+        </Link>
+        <Link href="/products">
+          <a className="mr-5 hover:text-gray-900">Shop</a>
+        </Link>
+        <Link href="/contact">
+          <a className="hover:text-gray-900">Contact</a>
+        </Link>
+      </div>
+      <div className="w-1/3 flex justify-center hover:font-bold">
+        <Link href="/products">
+          <div className="w-full flex justify-center items-center ">
+            <Image
+              src="/shopping-cart-svgrepo-com.svg"
+              alt="Picture of the author"
+              width={30}
+              height={30}
+            />
+            <span className="ml-3 text-xl cursor-pointer">MyShop</span>
           </div>
+        </Link>
+      </div>
+      <div className="w-1/3 flex lg:justify-end items-center pt-5 md:pt-0 lg:ml-0">
+        <div className="mr-5">
+          <Link href="/cart">
+            <IconButton aria-label="cart">
+              <StyledBadge badgeContent={cart?.length} color="secondary">
+                <ShoppingCartIcon />
+              </StyledBadge>
+            </IconButton>
+          </Link>
         </div>
-      </header>
+        <Button
+          size="small"
+          color="info"
+          variant="contained"
+          sx={{
+            color: "black",
+            "&:hover": {
+              color: "white",
+            },
+          }}
+        >
+          Log in
+        </Button>
+      </div>
     </div>
   );
 }

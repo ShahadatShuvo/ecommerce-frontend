@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 
 function About() {
@@ -21,11 +22,11 @@ function About() {
                 <img
                   alt="team"
                   className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
-                  src="https://dummyimage.com/80x80"
+                  src="/img.jpg"
                 />
                 <div className="flex-grow">
                   <h2 className="text-gray-900 title-font font-medium">
-                    Holden Caulfield
+                    Shahadat Shuvo
                   </h2>
                   <p className="text-gray-500">UI Designer</p>
                 </div>
@@ -36,11 +37,11 @@ function About() {
                 <img
                   alt="team"
                   className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
-                  src="https://dummyimage.com/84x84"
+                  src="/img.jpg"
                 />
                 <div className="flex-grow">
                   <h2 className="text-gray-900 title-font font-medium">
-                    Henry Letham
+                    Shahadat Shuvo
                   </h2>
                   <p className="text-gray-500">CTO</p>
                 </div>
@@ -51,11 +52,11 @@ function About() {
                 <img
                   alt="team"
                   className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
-                  src="https://dummyimage.com/88x88"
+                  src="/img.jpg"
                 />
                 <div className="flex-grow">
                   <h2 className="text-gray-900 title-font font-medium">
-                    Oskar Blinde
+                    Shahadat Shuvo
                   </h2>
                   <p className="text-gray-500">Founder</p>
                 </div>
@@ -66,11 +67,11 @@ function About() {
                 <img
                   alt="team"
                   className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
-                  src="https://dummyimage.com/90x90"
+                  src="/img.jpg"
                 />
                 <div className="flex-grow">
                   <h2 className="text-gray-900 title-font font-medium">
-                    John Doe
+                    Shahadat Shuvo
                   </h2>
                   <p className="text-gray-500">DevOps</p>
                 </div>
@@ -81,11 +82,11 @@ function About() {
                 <img
                   alt="team"
                   className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
-                  src="https://dummyimage.com/94x94"
+                  src="/img.jpg"
                 />
                 <div className="flex-grow">
                   <h2 className="text-gray-900 title-font font-medium">
-                    Martin Eden
+                    Shahadat Shuvo
                   </h2>
                   <p className="text-gray-500">Software Engineer</p>
                 </div>
@@ -96,11 +97,11 @@ function About() {
                 <img
                   alt="team"
                   className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
-                  src="https://dummyimage.com/98x98"
+                  src="/img.jpg"
                 />
                 <div className="flex-grow">
                   <h2 className="text-gray-900 title-font font-medium">
-                    Boris Kitua
+                    Shahadat Shuvo
                   </h2>
                   <p className="text-gray-500">UX Researcher</p>
                 </div>
@@ -111,11 +112,11 @@ function About() {
                 <img
                   alt="team"
                   className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
-                  src="https://dummyimage.com/100x90"
+                  src="/img.jpg"
                 />
                 <div className="flex-grow">
                   <h2 className="text-gray-900 title-font font-medium">
-                    Atticus Finch
+                    Shahadat Shuvo
                   </h2>
                   <p className="text-gray-500">QA Engineer</p>
                 </div>
@@ -126,11 +127,11 @@ function About() {
                 <img
                   alt="team"
                   className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
-                  src="https://dummyimage.com/104x94"
+                  src="/img.jpg"
                 />
                 <div className="flex-grow">
                   <h2 className="text-gray-900 title-font font-medium">
-                    Alper Kamu
+                    Shahadat Shuvo
                   </h2>
                   <p className="text-gray-500">System</p>
                 </div>
@@ -141,11 +142,11 @@ function About() {
                 <img
                   alt="team"
                   className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
-                  src="https://dummyimage.com/108x98"
+                  src="/img.jpg"
                 />
                 <div className="flex-grow">
                   <h2 className="text-gray-900 title-font font-medium">
-                    Rodrigo Monchi
+                    Shahadat Shuvo
                   </h2>
                   <p className="text-gray-500">Product Manager</p>
                 </div>
