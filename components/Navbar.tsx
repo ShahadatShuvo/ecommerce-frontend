@@ -18,8 +18,8 @@ const StyledBadge = styled(Badge)<BadgeProps>(({ theme }) => ({
 
 function Navbar({ cart }: any) {
   return (
-    <div className="w-full py-3 my-4 rounded-lg px-8 mx-auto bg-gray-100 flex justify-between text-gray-600">
-      <div className="w-1/3 flex items-center">
+    <div className="w-full py-3 my-4 rounded-lg px-8 mx-auto bg-gray-100 flex flex-col md:flex-row flex-wrap justify-between text-gray-600">
+      <div className="order-2 md:order-1 w-full md:w-1/3 flex justify-center md:justify-start mt-3 md:mt-0 items-center">
         <Link href="/">
           <a className="mr-5 hover:text-gray-900">Home</a>
         </Link>
@@ -33,7 +33,7 @@ function Navbar({ cart }: any) {
           <a className="hover:text-gray-900">Contact</a>
         </Link>
       </div>
-      <div className="w-1/3 flex justify-center hover:font-bold">
+      <div className="order-1 md:order-2 w-full md:w-1/3 flex justify-center hover:font-bold">
         <Link href="/products">
           <div className="w-full flex justify-center items-center ">
             <Image
@@ -42,11 +42,13 @@ function Navbar({ cart }: any) {
               width={30}
               height={30}
             />
-            <span className="ml-3 text-xl cursor-pointer">MyShop</span>
+            <span className="ml-3 text-2xl font-bold md:font-normal cursor-pointer">
+              MyShop
+            </span>
           </div>
         </Link>
       </div>
-      <div className="w-1/3 flex lg:justify-end items-center pt-5 md:pt-0 lg:ml-0">
+      <div className="order-3 w-full md:w-1/3 flex justify-center lg:justify-end items-center pt-3 md:pt-0 lg:ml-0">
         <div className="mr-5">
           <Link href="/cart">
             <IconButton aria-label="cart">
