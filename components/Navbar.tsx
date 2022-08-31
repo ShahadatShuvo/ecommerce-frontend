@@ -35,17 +35,18 @@ function Navbar({ cart }: any) {
               <a className="hover:text-gray-900">Contact</a>
             </Link>
           </nav>
-          <a className="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-gray-900 lg:items-center lg:justify-center mb-4 md:mb-0">
-            <Image
-              src="/shopping-cart-svgrepo-com.svg"
-              alt="Picture of the author"
-              width={30}
-              height={30}
-            />
-            <Link href="/products">
+          <Link href="/products">
+            <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+              <Image
+                src="/shopping-cart-svgrepo-com.svg"
+                alt="Picture of the author"
+                width={30}
+                height={30}
+              />
+
               <span className="ml-3 text-xl cursor-pointer">MyShop</span>
-            </Link>
-          </a>
+            </a>
+          </Link>
           <div className="lg:w-2/5 flex lg:justify-end items-center pt-5 md:pt-0 lg:ml-0 ">
             <div className="mr-5">
               <Link href="/cart">
