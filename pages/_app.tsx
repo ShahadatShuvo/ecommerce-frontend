@@ -6,7 +6,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <div>
       <Navbar />
-      <Component {...pageProps} />
+      <div className="container mx-auto px-4">
+        <Component {...pageProps} />
+      </div>
     </div>
   );
 }

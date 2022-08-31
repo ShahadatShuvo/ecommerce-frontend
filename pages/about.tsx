@@ -2,7 +2,7 @@ import React from "react";
 
 function About() {
   return (
-    <div className="container mx-auto px-4">
+    <div>
       <p>About</p>
     </div>
   );
