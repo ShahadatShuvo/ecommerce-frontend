@@ -21,7 +21,8 @@
     "**/*.tsx",
     "pages/index.js",
     "pages/index.js",
-    "pages/_app.jsx"
+    "pages/_app.jsx",
+    "pages/contact.jsx"
   ],
   "exclude": ["node_modules"]
 }

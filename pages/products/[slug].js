@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { Button, TextField } from "@mui/material";
 import React from "react";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
