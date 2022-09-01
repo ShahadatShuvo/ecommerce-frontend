@@ -51,8 +51,6 @@ const Home: NextPage = () => {
                   <svg
                     fill="none"
                     stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
                     strokeWidth="2"
                     className="w-4 h-4 ml-2"
                     viewBox="0 0 24 24"

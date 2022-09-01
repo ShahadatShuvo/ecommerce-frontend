@@ -6,8 +6,8 @@ function Footer() {
   return (
     <div>
       <footer className="text-gray-600 body-font bg-gray-50">
-        <div className="container px-5 py-5 mx-auto flex items-center sm:flex-row flex-col">
-          <Link href="/products">
+        <div className="container px-5 py-3 mx-auto flex items-center sm:flex-row flex-col">
+          <Link href="/shop">
             <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
               <Image
                 src="/shopping-cart-svgrepo-com.svg"
@@ -34,8 +34,6 @@ function Footer() {
             <a className="text-gray-500">
               <svg
                 fill="currentColor"
-                strokLinecap="round"
-                strokLinejoin="round"
                 strokeWidth="2"
                 className="w-5 h-5"
                 viewBox="0 0 24 24"
@@ -46,8 +44,6 @@ function Footer() {
             <a className="ml-3 text-gray-500">
               <svg
                 fill="currentColor"
-                strokLinecap="round"
-                strokLinejoin="round"
                 strokeWidth="2"
                 className="w-5 h-5"
                 viewBox="0 0 24 24"
@@ -59,8 +55,6 @@ function Footer() {
               <svg
                 fill="none"
                 stroke="currentColor"
-                strokLinecap="round"
-                strokLinejoin="round"
                 strokeWidth="2"
                 className="w-5 h-5"
                 viewBox="0 0 24 24"
@@ -73,8 +67,6 @@ function Footer() {
               <svg
                 fill="currentColor"
                 stroke="currentColor"
-                strokLinecap="round"
-                strokLinejoin="round"
                 strokeWidth="0"
                 className="w-5 h-5"
                 viewBox="0 0 24 24"

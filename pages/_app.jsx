@@ -28,7 +28,7 @@ function MyApp({ Component, pageProps }) {
   const clearCart = () => {};
 
   return (
-    <div className="relative min-h-[95vh] min-w-[98vw]">
+    <div className="relative min-h-[92vh] min-w-[96vw]">
       <div className="container mx-auto px-4">
         <Navbar key={reloadkey} cart={cart} />
         <Component
@@ -38,7 +38,7 @@ function MyApp({ Component, pageProps }) {
           {...pageProps}
         />
       </div>
-      <div className="absolute bottom-[-20px] w-full">
+      <div className="absolute bottom-[-30px] w-full">
         <Footer />
       </div>
     </div>

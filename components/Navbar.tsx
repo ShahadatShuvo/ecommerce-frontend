@@ -26,15 +26,18 @@ function Navbar({ cart }: any) {
         <Link href="/about">
           <a className="mr-5 hover:text-gray-900">About</a>
         </Link>
-        <Link href="/products">
+        <Link href="/shop">
           <a className="mr-5 hover:text-gray-900">Shop</a>
         </Link>
         <Link href="/contact">
-          <a className="hover:text-gray-900">Contact</a>
+          <a className="hover:text-gray-900 mr-5">Contact</a>
+        </Link>
+        <Link href="/user">
+          <a className="hover:text-gray-900">User</a>
         </Link>
       </div>
       <div className="order-1 md:order-2 w-full md:w-1/3 flex justify-center hover:font-bold">
-        <Link href="/products">
+        <Link href="/shop">
           <div className="w-full flex justify-center items-center ">
             <Image
               src="/shopping-cart-svgrepo-com.svg"
