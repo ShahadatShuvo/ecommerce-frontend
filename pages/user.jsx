@@ -6,13 +6,18 @@ import SearchData from "../components/SearchData";
 function User() {
   const [query, setQuery] = React.useState("");
 
+  const keys = ["first_name", "last_name", "email", "gender"];
+
   const search = (data) => {
     return data.filter((item) => {
       return (
-        item.first_name.toLowerCase().includes(query.toLowerCase()) ||
-        item.last_name.toLowerCase().includes(query) ||
-        item.email.toLowerCase().includes(query) ||
-        item.gender.toLowerCase().includes(query)
+        // item.first_name.toLowerCase().includes(query.toLowerCase()) ||
+        // item.last_name.toLowerCase().includes(query) ||
+        // item.email.toLowerCase().includes(query) ||
+        // item.gender.toLowerCase().includes(query)
+        keys.some((key) =>
+          item[key].toLowerCase().includes(query.toLowerCase())
+        )
       );
     });
   };
