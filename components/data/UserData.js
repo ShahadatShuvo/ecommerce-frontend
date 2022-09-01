@@ -564,7 +564,7 @@ export const UserData = [
     first_name: "Calley",
     last_name: "Tabram",
     email: "ctabram28@blogtalkradio.com",
-    gender: "Non-bin,ary",
+    gender: "male",
   },
   {
     id: 82,

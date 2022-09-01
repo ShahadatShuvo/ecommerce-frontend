@@ -4,6 +4,13 @@ function SearchData({ data, query }) {
   const createSlicedString = (string, query) => {
     string = string.toLowerCase();
     let index = string.indexOf(query);
+    if (index === -1) {
+      return {
+        beforeMatch: string,
+        match: "",
+        afterMatch: "",
+      };
+    }
     if (index === 0 && query.length > 0) {
       if (string.length > query.length) {
         return {
@@ -18,22 +25,26 @@ function SearchData({ data, query }) {
           afterMatch: "",
         };
       }
-    } else if (index > 0 && query.length > 0 && string.length > query.length) {
-      return {
-        beforeMatch: string.slice(0, index),
-        match: query,
-        afterMatch: string.slice(index + query.length, string.length),
-      };
-    } else if (
-      index > 0 &&
-      query.length > 0 &&
-      string.length === query.length + index
-    ) {
-      return {
-        beforeMatch: string.slice(0, query.length),
-        match: query,
-        afterMatch: "",
-      };
+    } else if (index > 0 && query.length > 0) {
+      if (string.length > query.length + index) {
+        return {
+          beforeMatch: string.slice(0, index),
+          match: query,
+          afterMatch: string.slice(index + query.length, string.length),
+        };
+      } else if (string.length < query.length + index) {
+        return {
+          beforeMatch: string.slice(0, index),
+          match: string.slice(index, string.length),
+          afterMatch: "",
+        };
+      } else {
+        return {
+          beforeMatch: string.slice(0, index),
+          match: query,
+          afterMatch: "",
+        };
+      }
     } else {
       return {
         beforeMatch: string,
