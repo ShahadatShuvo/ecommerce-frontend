@@ -4,9 +4,9 @@ import React from "react";
 
 function Footer() {
   return (
-    <div>
+    <div className="mb-2">
       <footer className="text-gray-600 body-font bg-gray-50">
-        <div className="container px-5 py-3 mx-auto flex items-center sm:flex-row flex-col">
+        <div className="container px-5 py-2 mx-auto flex items-center sm:flex-row flex-col">
           <Link href="/shop">
             <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
               <Image
